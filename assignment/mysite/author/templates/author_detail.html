@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Name: {{ author.name }}</h2>
+<p>Email: {{ author.email }}</p>
+<a href="/author/{{author.id}}/update">Edit</a>
+<a href="/author/{{author.id}}/delete">Delete</a>
+{% endblock %}

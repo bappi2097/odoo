@@ -1,0 +1,8 @@
+<!-- entry_detail.html -->
+
+{% extends 'base.html' %} {% block content %}
+<h2>{{ blog.name }}</h2>
+<p>{{ blog.tagline }}</p>
+<a href="/blog/{{blog.id}}/update">Edit</a>
+<a href="/blog/{{blog.id}}/delete">Delete</a>
+{% endblock %}

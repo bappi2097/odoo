@@ -1,0 +1,11 @@
+<!-- entry_list.html -->
+
+{% extends 'base.html' %} {% block content %}
+<h2>Blog List</h2>
+<a href="/blog/create">Create Blog</a>
+<ul>
+  {% for blog in blogs %}
+  <li><a href="{% url 'blog-detail' blog.pk %}">{{ blog.name }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

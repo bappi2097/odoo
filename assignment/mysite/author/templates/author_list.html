@@ -1,0 +1,11 @@
+<!-- entry_list.html -->
+
+{% extends 'base.html' %} {% block content %}
+<h2>Author List</h2>
+<a href="/author/create">Create Author</a>
+<ul>
+  {% for author in authors %}
+  <li><a href="{% url 'author-detail' author.pk %}">{{ author.name }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

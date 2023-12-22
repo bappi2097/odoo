@@ -1,0 +1,15 @@
+<!-- entry_detail.html -->
+
+{% extends 'base.html' %} {% block content %}
+<h2>{{ entry.headline }}</h2>
+<p>{{ entry.body_text }}</p>
+<p>Published on: {{ entry.pub_date }}</p>
+<p>Modified on: {{ entry.mod_date }}</p>
+<p>
+  Authors: {% for author in entry.authors.all %} {{ author.name }} {% endfor %}
+</p>
+<p>Number of comments: {{ entry.number_of_comments }}</p>
+<p>Rating: {{ entry.rating }}</p>
+<a href="/entry/{{entry.id}}/update">Edit</a>
+<a href="/entry/{{entry.id}}/delete">Delete</a>
+{% endblock %}
