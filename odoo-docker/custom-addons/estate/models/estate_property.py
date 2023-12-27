@@ -55,7 +55,8 @@ class EstateProperty(models.Model):
             ("offer_accepted", "Offer Accepted"),
             ("sold", "Sold"),
             ("canceled", "Canceled"),
-        ]
+        ],
+        default="new"
     )
     best_price = fields.Float("Best Offer", compute="_compute_best_price", help="Best Offer received")
 

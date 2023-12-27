@@ -26,7 +26,7 @@ class EstatePropertyOffer(models.Model):
     )
     
     partner_id = fields.Many2one("res.partner", string="Partner", required=True)
-    property_id = fields.Many2one('estate.property', string='Property', ondelete='cascade', required=True)
+    property_id = fields.Many2one('estate.property', string='Property', required=True)
 
     property_type_id = fields.Many2one(
         "estate.property.type", related="property_id.property_type_id",
@@ -47,8 +47,10 @@ class EstatePropertyOffer(models.Model):
             
     @api.model
     def create(self, vals):
+        print("vals====================",vals)
         if vals.get("property_id") and vals.get("price"):
             prop = self.env["estate.property"].browse(vals["property_id"])
+            print("prop====================",prop)
             
             if prop.offer_ids:
                 max_offer = max(prop.mapped("offer_ids.price"))

@@ -9,4 +9,5 @@
     ],
     "auto_install": True,
     'images': ['static/description/icon.png'],
+    'application': True
 }
