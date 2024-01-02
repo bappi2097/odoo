@@ -10,7 +10,7 @@ class HREmployeeCertificate(models.Model):
     _inherits = {'res.company': 'company_id'}
 
     name = fields.Char(string='Certificate Name', size=100, required=True)
-    # company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.user.company_id.id)
+    company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.user.company_id.id)
 
 
 class HRCertificateIssuedBy(models.Model):

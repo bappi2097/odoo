@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    excel output template-->
+    <data>
+        <record id="eccel_report_view_form" model="ir.ui.view">
+            <field name="name">excel.report.out.form</field>
+            <field name="model">excel.report.out</field>
+            <field name="arch" type="xml">
+                <form string="Import Excel Form">
+                    <group>
+                        <group>
+                            <field name="excel_file" readonly="1" filename="file_name" />
+                            <field name="file_name" invisible="1" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+    <!--Form View-->
+    <record id="employee_certification_wizard_form" model="ir.ui.view">
+        <field name="name">employee.certification.wizard.form</field>
+        <field name="model">employee.certification.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Employee Certification" create="false" edit="false">
+                <separator string="Certification" class="custom-bread-crumb"/>
+                <group>
+                    <group>
+                        <field name="employee_id" options='{"no_open": True,"no_create": 1, "no_create_edit": 1}'/>
+                    </group>
+                </group>
+                <button name="action_preview" string="SHOW" type="object"
+                        class="oe_highlight"/> OR
+                <button name="action_export" string="EXCEL" type="object"
+                        class="oe_highlight"/>
+                <separator/>
+                <field name="preview" readonly="1"/>
+            </form>
+        </field>
+    </record>
+
+    <!--Action View-->
+    <record id="employee_certification_wizard_action" model="ir.actions.act_window">
+        <field name="name">Employee Certification Report</field>
+        <field name="res_model">employee.certification.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+    </record>
+
+    <!--Add Menu Item-->
+    <menuitem id="menu_employee_certification_wizard"
+              action="employee_certification_wizard_action"
+              name="Certification Report"
+              parent="hr.menu_human_resources_configuration"
+              groups="hr.group_hr_user"
+              sequence="100"/>
+</odoo>

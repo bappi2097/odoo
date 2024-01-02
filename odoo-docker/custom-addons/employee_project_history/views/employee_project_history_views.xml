@@ -1,105 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_employee_certificate_form" model="ir.ui.view">
-        <field name="name">employee.certificate.form</field>
-        <field name="model">employee.certificate</field>
+    <record id="view_employee_job_rank_form" model="ir.ui.view">
+        <field name="name">employee.job_rank.form</field>
+        <field name="model">employee.job_rank</field>
         <field name="arch" type="xml">
-            <form string="Employee Certificate">
+            <form string="Employee Job Rank">
                 <sheet>
                     <group>
                         <group>
                             <field name="name"/>
-                        </group>
-                        <group>
-                            <field name="company_id" groups="base.group_multi_company" options='{"no_open": True, "no_create": True}'/>
                         </group>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-    <record id="view_employee_certificate_tree" model="ir.ui.view">
-        <field name="name">employee.certificate.tree</field>
-        <field name="model">employee.certificate</field>
+    <record id="view_employee_job_rank_tree" model="ir.ui.view">
+        <field name="name">employee.job_rank.tree</field>
+        <field name="model">employee.job_rank</field>
         <field name="arch" type="xml">
-            <tree string="Employee Certificate">
+            <tree string="Employee Job Rank">
                 <field name="name"/>
-                <field name="company_id" groups="base.group_multi_company"/>
             </tree>
         </field>
     </record>
-    <record id="action_employee_certificate_form" model="ir.actions.act_window">
-        <field name="name">Employee Certificate</field>
+    <record id="action_employee_job_rank_form" model="ir.actions.act_window">
+        <field name="name">Employee Job Rank</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">employee.certificate</field>
+        <field name="res_model">employee.job_rank</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
-                Click to define a new certificate
+                Click to define a new job rank
             </p>
         </field>
     </record>
 
-    <menuitem action="action_employee_certificate_form" id="menu_action_employee_certificate_form" parent="hr.menu_human_resources_configuration" sequence="20" groups="hr.group_hr_user" />
-
-    <!-- Employee Certificate Issued By Form View -->
-    <record id="employee_certificate_issued_by_form_view" model="ir.ui.view">
-        <field name="name">certificate.issued.by.form.view</field>
-        <field name="model">certificate.issued.by</field>
+    <menuitem action="action_employee_job_rank_form" id="menu_action_employee_job_rank_form" parent="hr.menu_human_resources_configuration" sequence="15" groups="hr.group_hr_user" />
+    <!-- Employee Project History Form View -->
+    <record id="employee_project_history_form_view" model="ir.ui.view">
+        <field name="name">employee.project_history.form.view</field>
+        <field name="model">employee.project_history</field>
         <field name="arch" type="xml">
-            <form string="Issued By">
-                <sheet>
-                    <group>
-                        <group>
-                            <field name="name"/>
-                        </group>
-                        <group>
-                            <field name="company_id" groups="base.group_multi_company" options='{"no_open": True, "no_create": True}'/>
-                        </group>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
-    <record id="employee_certificate_issued_by_tree_view" model="ir.ui.view">
-        <field name="name">certificate.issued.by.tree.view</field>
-        <field name="model">certificate.issued.by</field>
-        <field name="arch" type="xml">
-            <tree string="Issued By Tree">
-                <field name="name"/>
-                <field name="company_id" groups="base.group_multi_company"/>
-            </tree>
-        </field>
-    </record>
-
-    <record id="action_employee_certificate_issued_by_form" model="ir.actions.act_window">
-        <field name="name">Certificate Issued By</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">certificate.issued.by</field>
-        <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
-                Click to define a new certificate issued by.
-            </p>
-        </field>
-    </record>
-
-    <menuitem action="action_employee_certificate_issued_by_form" id="menu_employee_certificate_issued_by_form" parent="hr.menu_human_resources_configuration" sequence="12" groups="hr.group_hr_user"/>
-
-    <!-- Employee Certification Form View -->
-    <record id="employee_certification_form_view" model="ir.ui.view">
-        <field name="name">employee.certification.form.view</field>
-        <field name="model">employee.certification</field>
-        <field name="arch" type="xml">
-            <form string="Employee's Certification">
+            <form string="Employee's Project History">
                 <sheet>
                     <group>
                         <field name="employee_id"/>
-                        <field name="certification_id" options='{"no_open": True, "no_create": True}'/>
-                        <field name="institute" options='{"no_open": True, "no_create": True}'/>
+                        <field name="name"/>
+                        <field name="no_of_members"/>
                         <field name="start_date"/>
                         <field name="end_date"/>
+                        <field name="status"/>
+                        <field name="duration"/>
                         <field name="company_id" groups="base.group_multi_company" options='{"no_open": True, "no_create": True}'/>
                     </group>
                 </sheet>
@@ -107,48 +59,46 @@
         </field>
     </record>
 
-    <!-- Employee Certification Tree View -->
-    <record id="employee_certification_tree_view" model="ir.ui.view">
-        <field name="name">employee.certification.tree.view</field>
-        <field name="model">employee.certification</field>
+    <!-- Employee Project History Tree View -->
+    <record id="employee_project_history_tree_view" model="ir.ui.view">
+        <field name="name">employee.project_history.tree.view</field>
+        <field name="model">employee.project_history</field>
         <field name="arch" type="xml">
             <tree string="">
                 <field name="employee_id"/>
-                <field name="certification_id"/>
-                <field name="institute"/>
+                <field name="name"/>
+                <field name="no_of_members"/>
                 <field name="start_date"/>
                 <field name="end_date"/>
+                <field name="status"/>
+                <field name="duration"/>
                 <field name="company_id" groups="base.group_multi_company"/>
             </tree>
         </field>
     </record>
 
-    <!-- Employee Certification Search View -->
-    <record id="employee_certification_search_view" model="ir.ui.view">
-        <field name="name">employee.certification.search.view</field>
-        <field name="model">employee.certification</field>
+    <!-- Employee Project History Search View -->
+    <record id="employee_project_history_search_view" model="ir.ui.view">
+        <field name="name">employee.project_history.search.view</field>
+        <field name="model">employee.project_history</field>
         <field name="arch" type="xml">
             <search string="">
                 <field name="employee_id"/>
-                <field name="certification_id"/>
-                <field name="institute"/>
-                <group expand="0" string="Group By">
-                    <filter name="groupby_Employee" string="Employee" domain="[]" context="{'group_by':'employee_id'}" help="Group Record Employee Wise"/>
-                    <filter name="groupby_certification" string="Certification" domain="[]" context="{'group_by':'certification_id'}" help="Group Record Certification Wise"/>
-                    <filter name="groupby_institute" context="{'group_by': 'institute'}" string="Institute" help="Group Record Institute Wise"/>
-                </group>
+                <field name="status"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
             </search>
         </field>
     </record>
 
     <!-- Menu -->
-    <record model="ir.actions.act_window" id="parent_action_window_employee_certification">
-        <field name="name">Project History</field>
-        <field name="res_model">employee.certification</field>
+    <record model="ir.actions.act_window" id="parent_action_window_employee_project_history">
+        <field name="name">Project Histories</field>
+        <field name="res_model">employee.project_history</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem action="parent_action_window_employee_certification" id="menu_employee_certification_form" parent="hr.menu_human_resources_configuration" sequence="13" groups="hr.group_hr_user"/>
+    <menuitem action="parent_action_window_employee_project_history" id="menu_employee_project_history_form" parent="hr.menu_human_resources_configuration" sequence="20" groups="hr.group_hr_user"/>
 
     <record id="employee_inherited_details_form_view" model="ir.ui.view">
         <field name="name">employee.inherited.form.details.view</field>
@@ -157,33 +107,34 @@
         <field name="priority">12</field>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='job_id']" position="after">
-                <field name="job_status"/>
+                <field name="job_rank_id"/>
             </xpath>
-            <xpath expr="//page[@name='hr_settings']" position="after">
+            <xpath expr="//page[@name='certification']" position="after">
                 <page string="Project History" groups="base.group_user">
-                    <field name="certification_ids">
-                        <form string="Certifications">
+                    <field name="project_history_ids">
+                        <form string="Project Histories">
                             <group>
-                                <field name="certification_id" options='{"no_open": True}'/>
-                                <field name="institute" options='{"no_open": True}'/>
+                                <field name="name"/>
+                                <field name="no_of_members"/>
                                 <field name="start_date"/>
                                 <field name="end_date"/>
-                                <field name="certificate_status"/>
-                                <field name="certificate_photo" widget="many2many_binary" />
+                                <field name="status"/>
+                                <field name="duration"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
                             </group>
                         </form>
-                        <tree string="Certifications" editable="bottom" nolabel="1" default_order="start_date desc">
-                            <field name="certification_id"/>
-                            <field name="institute"/>
+                        <tree string="Project Histories" editable="bottom" nolabel="1" default_order="start_date desc">
+                            <field name="name"/>
+                            <field name="no_of_members"/>
                             <field name="start_date"/>
                             <field name="end_date"/>
-                            <field name="certificate_status"/>
-                            <field name="certificate_photo" widget="many2many_binary" />
+                            <field name="status"/>
+                            <field name="duration"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
                         </tree>
                     </field>
                 </page>
             </xpath>
-
         </field>
     </record>
 </odoo>

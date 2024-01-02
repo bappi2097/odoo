@@ -11,6 +11,7 @@
     'data': [
         'security/ir.model.access.csv',
         'security/rules.xml',
+        'wizards/employee_project_history_wizard_views.xml',
         'views/employee_project_history_views.xml',
     ],
     'sequence': 0,

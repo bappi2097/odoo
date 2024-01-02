@@ -11,6 +11,9 @@
     'data': [
         'security/ir.model.access.csv',
         'security/rules.xml',
+        'wizards/employee_certification_wizard_views.xml',
         'views/employee_certification_views.xml',
     ],
+    'sequence': 0,
+    'application': True
 }
