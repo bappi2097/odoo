@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.digital.book,access_digital_book,employee_digital_book.model_digital_book,employee_digital_book_access,1,1,1,1
+access.digital.book.category,access_digital_book_category,employee_digital_book.model_digital_book_category,employee_digital_book_access,1,1,1,1
+access.digital.book.type,access_digital_book_type,employee_digital_book.model_digital_book_type,employee_digital_book_access,1,1,1,1

@@ -1,0 +1,13 @@
+<odoo>
+    <record model="ir.module.category" id="module_category_digital_book">
+        <field name="name">Employee Digital Book</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="employee_digital_book_access" model="res.groups">
+        <field name="name">HR / Manager</field>
+        <field name="category_id" ref="module_category_digital_book"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]" />
+    </record>
+
+</odoo>

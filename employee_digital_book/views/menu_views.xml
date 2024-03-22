@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="menu_employee_digital_book_root"
+              name="Employee Digital Book"
+              web_icon="employee_digital_book,static/description/icon.png" />
+    <menuitem id="menu_digital_book"
+              name="Digital Books"
+              parent="menu_employee_digital_book_root"
+              action="action_digital_book" />
+    <menuitem id="menu_digital_book_configuration"
+              name="Configurations"
+              parent="menu_employee_digital_book_root"
+              action="action_digital_book" />
+    <menuitem id="menu_digital_book_category"
+              name="Category"
+              parent="menu_digital_book_configuration"
+              action="action_digital_book_category" />
+    <menuitem id="menu_digital_book_type"
+              name="File Type"
+              parent="menu_digital_book_configuration"
+              action="action_digital_book_type" />
+</odoo>
